@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/process_payment.css' %}">
+
+{% block content %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="my-4">
+        <h1 class="display-4">Process Payment</h1>
+        <div class="card mt-4">
+          <div class="card-body">
+            <h5 class="card-title">Order ID: {{ order.id }}</h5>
+            <p class="card-text">Total Amount: ${{ order.total_cost }}</p>
+            <p class="card-text">Minimum Deposit: ${{ deposit_amount }}</p>
+            <form method="post">
+              {% csrf_token %}
+              {{ form.as_p }}
+              <button type="submit" class="btn btn-primary mt-3">Pay Now</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

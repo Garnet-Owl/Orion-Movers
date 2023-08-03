@@ -1,0 +1,48 @@
+/* Add your global CSS rules here */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Navigation bar styles */
+  .navbar {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .navbar-nav .nav-item .nav-link {
+    color: #fff;
+  }
+  
+  .navbar-nav .nav-item .nav-link:hover {
+    color: #e5e5e5;
+  }
+  
+  /* Main content styles */
+  .container {
+    margin-top: 20px;
+  }
+  
+  /* Footer styles */
+  footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+  }
+  
+  /* Override Bootstrap's default link color */
+  a {
+    color: #007bff;
+  }
+  
+  a:hover {
+    color: #0056b3;
+  }
+  

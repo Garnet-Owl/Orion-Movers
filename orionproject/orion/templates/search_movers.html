@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="my-4">
+        <h1 class="display-4">Search Movers</h1>
+        <form class="mt-4" method="get">
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" name="q" placeholder="Enter location..." value="{{ q }}">
+            <button type="submit" class="btn btn-primary">Search</button>
+          </div>
+        </form>
+        {% if error %}
+        <div class="alert alert-danger" role="alert">
+          {{ error }}
+        </div>
+        {% endif %}
+      </div>
+
+      {% if movers %}
+      <div class="row">
+        {% for mover in movers %}
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">{{ mover.user.username }}</h5>
+              <p class="card-text">Rating: {{ mover.rating }}</p>
+              <a href="{% url 'rate_mover' mover.id %}" class="btn btn-primary">Rate Mover</a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}
